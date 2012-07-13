@@ -69,7 +69,7 @@ namespace LoneWolf.Migration.Specs.Core
                 [Test]
                 public void Then_the_choice_link_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"choice\" onclick=\"javascript:Choice.turnTo(2);\">");
+                    result.ShouldContain("<button type=\"button\" class=\"choice\" onclick=\"javascript:Section.turnTo(2);\">");
                 }
             }
 
@@ -84,7 +84,7 @@ namespace LoneWolf.Migration.Specs.Core
                 [Test]
                 public void Then_the_random_link_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"random-number\" onclick=\"javascript:RandomNumber.roll();\">");
+                    result.ShouldContain("<button type=\"button\" class=\"random-number\" onclick=\"javascript:Section.roll();\">");
                 }
             }
 
@@ -99,11 +99,10 @@ namespace LoneWolf.Migration.Specs.Core
                 [Test]
                 public void Then_the_buttons_onclick_javascript_call_should_have_a_index_parameter()
                 {
-                    result.ShouldContain("onclick=\"javascript:RandomNumber.roll(0);\"");
-                    result.ShouldContain("onclick=\"javascript:RandomNumber.roll(1);\"");
+                    result.ShouldContain("onclick=\"javascript:Section.roll(0);\"");
+                    result.ShouldContain("onclick=\"javascript:Section.roll(1);\"");
                 }
             }
-
 
             public class Section_with_combat : When_Transform
             {
@@ -116,7 +115,7 @@ namespace LoneWolf.Migration.Specs.Core
                 [Test]
                 public void Then_the_combat_paragraph_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"combat\" onclick=\"javascript:Combat.fight();\">");
+                    result.ShouldContain("<button type=\"button\" class=\"combat\" onclick=\"javascript:Section.fight();\">");
                 }
             }
 
@@ -131,8 +130,8 @@ namespace LoneWolf.Migration.Specs.Core
                 [Test]
                 public void Then_the_buttons_onclick_javascript_call_should_have_a_index_parameter()
                 {
-                    result.ShouldContain("onclick=\"javascript:Combat.fight(0);\"");
-                    result.ShouldContain("onclick=\"javascript:Combat.fight(1);\"");
+                    result.ShouldContain("onclick=\"javascript:Section.fight(0);\"");
+                    result.ShouldContain("onclick=\"javascript:Section.fight(1);\"");
                 }
             }
 
@@ -167,6 +166,21 @@ namespace LoneWolf.Migration.Specs.Core
                     result.ShouldContain("<figure>");
                     result.ShouldContain("<img alt=\"\" src=\"small1.png\" />");
                     result.ShouldContain("<figure>");
+                }
+            }
+
+            public class Section_with_action_chart : When_Transform
+            {
+                protected override void Given()
+                {
+                    base.Given();
+                    document = GetXDocument(@"..\..\Data\section_with_action_chart.htm");
+                }
+
+                [Test]
+                public void Then_the_action_chart_link_should_be_transformed_to_a_button()
+                {
+                    result.ShouldContain("<button type=\"button\" class=\"action-chart\" onclick=\"javascript:Section.display();\">");
                 }
             }
         }

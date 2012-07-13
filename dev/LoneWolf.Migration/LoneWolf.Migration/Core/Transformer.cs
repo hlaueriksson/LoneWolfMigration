@@ -26,12 +26,12 @@ namespace LoneWolf.Migration.Core
 
                 var number = a.Attribute("href").Value.Replace("sect", string.Empty).Replace(".htm", string.Empty);
 
-                // <button type="button" onclick="javascript:Choice.turnTo(X);">
+                // <button type="button" onclick="javascript:Section.turnTo(X);">
                 a.Name = "button";
                 a.RemoveAttributes();
                 a.Add(new XAttribute("type", "button"));
                 a.Add(new XAttribute("class", "choice"));
-                a.Add(new XAttribute("onclick", string.Format("javascript:Choice.turnTo({0});", number)));
+                a.Add(new XAttribute("onclick", string.Format("javascript:Section.turnTo({0});", number)));
 
                 choice.Add(new XAttribute("id", number));
             }
@@ -42,12 +42,12 @@ namespace LoneWolf.Migration.Core
             {
                 var random = randoms.ElementAt(0);
 
-                // <button type="button" class="random-number" onclick="javascript:RandomNumber.roll();">
+                // <button type="button" class="random-number" onclick="javascript:Section.roll();">
                 random.Name = "button";
                 random.RemoveAttributes();
                 random.Add(new XAttribute("type", "button"));
                 random.Add(new XAttribute("class", "random-number"));
-                random.Add(new XAttribute("onclick", "javascript:RandomNumber.roll();"));
+                random.Add(new XAttribute("onclick", "javascript:Section.roll();"));
             }
             else
             {
@@ -55,12 +55,12 @@ namespace LoneWolf.Migration.Core
                 {
                     var random = randoms.ElementAt(index);
 
-                    // <button type="button" class="random-number" onclick="javascript:RandomNumber.roll();">
+                    // <button type="button" class="random-number" onclick="javascript:Section.roll();">
                     random.Name = "button";
                     random.RemoveAttributes();
                     random.Add(new XAttribute("type", "button"));
                     random.Add(new XAttribute("class", "random-number"));
-                    random.Add(new XAttribute("onclick", string.Format("javascript:RandomNumber.roll({0});", index)));
+                    random.Add(new XAttribute("onclick", string.Format("javascript:Section.roll({0});", index)));
                 }
             }
 
@@ -70,12 +70,12 @@ namespace LoneWolf.Migration.Core
             {
                 var combat = combats.ElementAt(0);
 
-                // <button type="button" class="combat" onclick="javascript:Combat.fight();">
+                // <button type="button" class="combat" onclick="javascript:Section.fight();">
                 combat.Name = "button";
                 combat.RemoveAttributes();
                 combat.Add(new XAttribute("type", "button"));
                 combat.Add(new XAttribute("class", "combat"));
-                combat.Add(new XAttribute("onclick", "javascript:Combat.fight();"));
+                combat.Add(new XAttribute("onclick", "javascript:Section.fight();"));
             }
             else
             {
@@ -83,12 +83,12 @@ namespace LoneWolf.Migration.Core
                 {
                     var combat = combats.ElementAt(index);
 
-                    // <button type="button" class="combat" onclick="javascript:Combat.fight(X);">
+                    // <button type="button" class="combat" onclick="javascript:Section.fight(X);">
                     combat.Name = "button";
                     combat.RemoveAttributes();
                     combat.Add(new XAttribute("type", "button"));
                     combat.Add(new XAttribute("class", "combat"));
-                    combat.Add(new XAttribute("onclick", string.Format("javascript:Combat.fight({0});", index)));
+                    combat.Add(new XAttribute("onclick", string.Format("javascript:Section.fight({0});", index)));
                 }
             }
 
@@ -107,6 +107,17 @@ namespace LoneWolf.Migration.Core
                             new XAttribute("src", src)));
 
                 illustration.ReplaceWith(figure);
+            }
+
+            // <a href="action.htm">Action Chart</a>
+            foreach (var action in source.XPathSelectElements("//a[@href='action.htm']"))
+            {
+                // <button type="button" class="action-chart" onclick="javascript:Section.display();">
+                action.Name = "button";
+                action.RemoveAttributes();
+                action.Add(new XAttribute("type", "button"));
+                action.Add(new XAttribute("class", "action-chart"));
+                action.Add(new XAttribute("onclick", "javascript:Section.display();"));
             }
 
             var result = new XDocument(
