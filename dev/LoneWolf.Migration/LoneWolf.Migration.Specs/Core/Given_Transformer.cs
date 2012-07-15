@@ -180,7 +180,7 @@ namespace LoneWolf.Migration.Specs.Core
                 [Test]
                 public void Then_the_action_chart_link_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"action-chart\" onclick=\"javascript:Section.display();\">");
+                    result.ShouldContain("<button type=\"button\" class=\"action-chart\" onclick=\"javascript:Section.inventory();\">");
                 }
             }
         }
