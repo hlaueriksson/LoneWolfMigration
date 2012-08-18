@@ -56,7 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BaseMigration.cs" />
+    <Compile Include="Core\ImageMigration.cs" />
+    <Compile Include="Core\IMigration.cs" />
     <Compile Include="Core\ITransformer.cs" />
+    <Compile Include="Core\PageMigration.cs" />
+    <Compile Include="Core\SectionMigration.cs" />
     <Compile Include="Core\Transformer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

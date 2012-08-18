@@ -4,7 +4,7 @@ using System.Xml.XPath;
 
 namespace LoneWolf.Migration.Core
 {
-    public class Transformer : ITransformer
+    public class Transformer : ITransformer // TODO: make modular
     {
         public string Transform(XDocument document)
         {
