@@ -1,4 +1,4 @@
-﻿namespace LoneWolf.Migration.Core
+﻿namespace LoneWolf.Migration.Files
 {
     public class Result
     {

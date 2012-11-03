@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-namespace LoneWolf.Migration.Core
+namespace LoneWolf.Migration.Files
 {
     public abstract class BaseMigration : IMigration
     {

@@ -2,7 +2,7 @@
 using System.Xml.Linq;
 using System.Xml.XPath;
 
-namespace LoneWolf.Migration.Core
+namespace LoneWolf.Migration.Files
 {
     public class Transformer : ITransformer // TODO: make modular
     {

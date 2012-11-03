@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using System.Xml.Linq;
-using LoneWolf.Migration.Core;
+using LoneWolf.Migration.Files;
 using NUnit.Framework;
 using Should;
 
-namespace LoneWolf.Migration.Specs.Core
+namespace LoneWolf.Migration.Specs.Files
 {
     public class Given_Transformer : MockedSpec<Transformer>
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using LoneWolf.Migration.Code;
-using LoneWolf.Migration.Core;
+using LoneWolf.Migration.Files;
 
 namespace LoneWolf.Migration
 {

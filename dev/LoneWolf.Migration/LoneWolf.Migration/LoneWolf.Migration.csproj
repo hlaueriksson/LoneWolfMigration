@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\BaseMigration.cs" />
+    <Compile Include="Files\BaseMigration.cs" />
     <Compile Include="Code\Combat.cs" />
     <Compile Include="Code\CombatSkill.cs" />
     <Compile Include="Code\GeneratorBase.cs" />
@@ -65,15 +65,15 @@
     <Compile Include="Code\KaiDiscipline.cs" />
     <Compile Include="Code\RandomNumberTable.cs" />
     <Compile Include="Code\SectionFactoryGenerator.cs" />
-    <Compile Include="Core\ImageMigration.cs" />
-    <Compile Include="Core\IMigration.cs" />
-    <Compile Include="Core\ITransformer.cs" />
-    <Compile Include="Core\PageMigration.cs" />
-    <Compile Include="Core\SectionMigration.cs" />
-    <Compile Include="Core\Transformer.cs" />
+    <Compile Include="Files\ImageMigration.cs" />
+    <Compile Include="Files\IMigration.cs" />
+    <Compile Include="Files\ITransformer.cs" />
+    <Compile Include="Files\PageMigration.cs" />
+    <Compile Include="Files\SectionMigration.cs" />
+    <Compile Include="Files\Transformer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Result.cs" />
+    <Compile Include="Files\Result.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -96,9 +96,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Files\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

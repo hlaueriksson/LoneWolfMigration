@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="BaseSpec.cs" />
     <Compile Include="Code\Given_Generator.cs" />
-    <Compile Include="Core\Given_Transformer.cs" />
+    <Compile Include="Files\Given_Transformer.cs" />
     <Compile Include="MockedSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
