@@ -1,6 +1,8 @@
-﻿namespace LoneWolf.Migration.Code
+﻿using LoneWolf.Migration.Common;
+
+namespace LoneWolf.Migration.Code
 {
-    public class ItemFactoryGenerator : ICodeGenerator
+    public class ItemFactoryGenerator : IMigration
     {
         public ItemFactoryGenerator(string input)
         {

@@ -56,6 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeMigration.cs" />
+    <Compile Include="FileMigration.cs" />
     <Compile Include="Files\BaseMigration.cs" />
     <Compile Include="Code\Combat.cs" />
     <Compile Include="Code\CombatSkill.cs" />
@@ -66,14 +68,14 @@
     <Compile Include="Code\RandomNumberTable.cs" />
     <Compile Include="Code\SectionFactoryGenerator.cs" />
     <Compile Include="Files\ImageMigration.cs" />
-    <Compile Include="Files\IMigration.cs" />
+    <Compile Include="Common\IMigration.cs" />
     <Compile Include="Files\ITransformer.cs" />
     <Compile Include="Files\PageMigration.cs" />
     <Compile Include="Files\SectionMigration.cs" />
     <Compile Include="Files\Transformer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Files\Result.cs" />
+    <Compile Include="Result.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

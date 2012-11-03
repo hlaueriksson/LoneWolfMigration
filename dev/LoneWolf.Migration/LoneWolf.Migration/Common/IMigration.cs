@@ -1,4 +1,4 @@
-﻿namespace LoneWolf.Migration.Files
+﻿namespace LoneWolf.Migration.Common
 {
     public interface IMigration
     {

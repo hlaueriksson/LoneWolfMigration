@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using LoneWolf.Migration.Common;
 
 namespace LoneWolf.Migration.Code
 {
-    public class SectionFactoryGenerator : ICodeGenerator
+    public class SectionFactoryGenerator : IMigration
     {
         private string input;
 
@@ -49,7 +50,7 @@ namespace LoneWolf.Migration.Code
 
         private string GetTemplate()
         {
-            var path = Directory.GetCurrentDirectory() + @"\LoneWolf.Migration\Core\Code\SectionFactory.java.template";
+            var path = Directory.GetCurrentDirectory() + @"\LoneWolf.Migration\Code\SectionFactory.java.template";
 
             return File.ReadAllText(path);
         }

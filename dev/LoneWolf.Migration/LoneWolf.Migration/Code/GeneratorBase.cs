@@ -15,7 +15,7 @@ namespace LoneWolf.Migration.Code
             Output = output;
         }
 
-        public IEnumerable<string> Generate(string[] input)
+        public IEnumerable<string> Generate(IEnumerable<string> input)
         {
             var rx = new Regex(Pattern, RegexOptions.Compiled);
 

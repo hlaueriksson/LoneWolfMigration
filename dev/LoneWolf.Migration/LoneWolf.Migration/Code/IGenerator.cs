@@ -4,11 +4,6 @@ namespace LoneWolf.Migration.Code
 {
     public interface IGenerator
     {
-        IEnumerable<string> Generate(string[] input);
-    }
-
-    public interface ICodeGenerator
-    {
-        void Execute();
+        IEnumerable<string> Generate(IEnumerable<string> input);
     }
 }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using LoneWolf.Migration.Code;
-using LoneWolf.Migration.Files;
 
 namespace LoneWolf.Migration
 {
@@ -11,106 +7,35 @@ namespace LoneWolf.Migration
     {
         public static void Main(string[] args)
         {
-            if (args.Length < 2)
-            {
-                Log("Usage:");
-                Log("lwm.exe -files <path-to-input> <path-to-output>");
-                Log("lwm.exe -code <path-to-input>");
+            Log(Execute(args));
+        }
 
-                return;
-            }
+        private static Result Execute(string[] args)
+        {
+            if (args.Length < 1) return GetFail();
 
-            var command = args.First();
-
-            Result result;
-
-            switch (command)
+            switch (args.First())
             {
                 case "-files":
-                    result = Files(args); break;
+                    return FileMigration.Execute(args);
                 case "-code":
-                    result = Code(args); break;
+                    return CodeMigration.Execute(args);
                 default:
-                    result = new Result("Fail!"); break;
-            }
-
-            Log(result.Message);
-        }
-
-        private static Result Files(string[] args)
-        {
-            var input = args.ElementAt(1);
-            var output = args.ElementAt(2);
-
-            return Migrate(input, output);
-        }
-
-        private static Result Code(IEnumerable<string> args)
-        {
-            var input = args.ElementAt(1);
-
-            return Generate(input);
-        }
-
-        private static void Log(string message)
-        {
-            Console.WriteLine(message);
-        }
-
-        private static Result Migrate(string input, string output)
-        {
-            if (!Directory.Exists(input)) return new Result("The path to input does not exist");
-            if (!Directory.Exists(output)) return new Result("The path to output does not exist");
-
-            try
-            {
-                foreach (var migration in GetMigrations(input, output))
-                {
-                    migration.Execute();
-                }
-
-                return new Result("Done");
-            }
-            catch (Exception ex)
-            {
-                return new Result(ex.GetType().Name + ": " + ex.Message + "\n" + ex.StackTrace);
+                    return GetFail();
             }
         }
 
-        private static IEnumerable<IMigration> GetMigrations(string input, string output)
+        private static Result GetFail()
         {
-            return new List<IMigration> {
-                new ImageMigration(input, output),
-                new SectionMigration(input, output),
-                //new PageMigration(input, output),
-            };
+            return new Result(
+                "Usage:\n" +
+                "lwm.exe -files <path-to-input> <path-to-output>\n" +
+                "lwm.exe -code <path-to-input>");
         }
 
-        private static Result Generate(string input)
+        private static void Log(Result result)
         {
-            if (!Directory.Exists(input)) return new Result("The path to input does not exist");
-
-            try
-            {
-                foreach (var migration in GetGenerators(input))
-                {
-                    migration.Execute();
-                }
-
-                return new Result("Done");
-            }
-            catch (Exception ex)
-            {
-                return new Result(ex.GetType().Name + ": " + ex.Message + "\n" + ex.StackTrace);
-            }
-        }
-
-        private static IEnumerable<ICodeGenerator> GetGenerators(string input)
-        {
-            return new List<ICodeGenerator> {
-                new SectionFactoryGenerator(input),
-                //new ItemFactoryGenerator(input)
-            };
+            Console.WriteLine(result.Message);
         }
     }
 }
