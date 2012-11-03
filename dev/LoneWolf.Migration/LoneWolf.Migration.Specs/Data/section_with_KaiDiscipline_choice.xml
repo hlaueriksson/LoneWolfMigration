@@ -1,0 +1,7 @@
+﻿<section>
+  <h1>1</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p class="choice" id="2">If you wish to use your Kai Discipline of Sixth Sense, <button type="button" class="choice" onclick="javascript:Section.turnTo(2);">turn to 2</button>.</p>
+  <p class="choice" id="3">If you wish to foo, <button type="button" class="choice" onclick="javascript:Section.turnTo(3);">turn to 3</button>.</p>
+  <p class="choice" id="4">If you wish to bar, <button type="button" class="choice" onclick="javascript:Section.turnTo(4);">turn to 4</button>.</p>
+</section>

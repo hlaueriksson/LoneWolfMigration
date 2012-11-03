@@ -33,9 +33,9 @@ namespace LoneWolf.Migration.Core
         {
             var inclusion = new List<string>()
             {
-                //"gamerulz.htm", // TODO
-                "discplnz.htm",
-                "equipmnt.htm"
+                "gamerulz.htm", // TODO
+                //"discplnz.htm",
+                //"equipmnt.htm"
             };
 
             return inclusion.Any(f => file.EndsWith(f));

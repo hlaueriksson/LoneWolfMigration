@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseSpec.cs" />
+    <Compile Include="Code\Given_Generator.cs" />
     <Compile Include="Core\Given_Transformer.cs" />
     <Compile Include="MockedSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +80,21 @@
       <Project>{58204c62-6789-4ecb-ada0-c95a3d16cc3a}</Project>
       <Name>LoneWolf.Migration</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\section.htm" />
+    <Content Include="Data\section_with_action_chart.htm" />
+    <Content Include="Data\section_with_choice.htm" />
+    <Content Include="Data\section_with_combat.htm" />
+    <Content Include="Data\section_with_Combat.xml" />
+    <Content Include="Data\section_with_CombatSkill_modifier.xml" />
+    <Content Include="Data\section_with_illustration.htm" />
+    <Content Include="Data\section_with_KaiDiscipline_choice.xml" />
+    <Content Include="Data\section_with_RandomNumber_choice.xml" />
+    <Content Include="Data\section_with_random_number_table.htm" />
+    <Content Include="Data\section_with_small_illustration.htm" />
+    <Content Include="Data\section_with_two_combats.htm" />
+    <Content Include="Data\section_with_two_random_number_tables.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
