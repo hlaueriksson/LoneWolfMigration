@@ -57,13 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeMigration.cs" />
+    <Compile Include="Code\GoldCrowns.cs" />
+    <Compile Include="Code\SectionGenerator.cs" />
+    <Compile Include="Code\Meal.cs" />
+    <Compile Include="Code\Weapon.cs" />
     <Compile Include="FileMigration.cs" />
     <Compile Include="Files\BaseMigration.cs" />
     <Compile Include="Code\Combat.cs" />
     <Compile Include="Code\CombatSkill.cs" />
     <Compile Include="Code\GeneratorBase.cs" />
     <Compile Include="Code\IGenerator.cs" />
-    <Compile Include="Code\ItemFactoryGenerator.cs" />
     <Compile Include="Code\KaiDiscipline.cs" />
     <Compile Include="Code\RandomNumberTable.cs" />
     <Compile Include="Code\SectionFactoryGenerator.cs" />

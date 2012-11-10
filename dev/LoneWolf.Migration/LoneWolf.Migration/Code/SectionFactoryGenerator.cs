@@ -25,22 +25,11 @@ namespace LoneWolf.Migration.Code
             {
                 var file = new FileInfo(path);
 
-                var result = Generate(file);
+                var number = Convert.ToInt32(file.Name.Replace("sect", string.Empty).Replace(".xml", string.Empty));
 
-                if(!string.IsNullOrEmpty(result))
-                {
-                    var number = Convert.ToInt32(file.Name.Replace("sect", string.Empty).Replace(".xml", string.Empty));
+                var lines = File.ReadAllLines(file.FullName);
 
-                    sb.Append("\t\t");
-                    sb.AppendFormat("manager.add(new Section(\"{0}\")", number);
-
-                    sb.Append(result);
-
-                    sb.Append(");");
-
-                    sb.AppendLine();
-                    sb.AppendLine();
-                }
+                sb.Append(SectionGenerator.Generate(number.ToString(), lines));
             }
 
             var template = GetTemplate();
@@ -60,40 +49,11 @@ namespace LoneWolf.Migration.Code
             return Directory.GetFiles(input, "sect*.xml");
         }
 
-        private string Generate(FileInfo file)
-        {
-            var sb = new StringBuilder();
-
-            var lines = File.ReadAllLines(file.FullName);
-
-            foreach (var generator in GetGenerators())
-            {
-                var result = generator.Generate(lines);
-
-                foreach (var line in result)
-                {
-                    sb.Append(line);
-                }
-            }
-
-            return sb.ToString();
-        }
-
         protected virtual void Write(string result)
         {
-            var path = input + "SectionFactory.cs";
+            var path = input + "SectionFactory.java";
 
             File.WriteAllText(path, result, Encoding.UTF8);
-        }
-
-        private IEnumerable<IGenerator> GetGenerators()
-        {
-            return new List<IGenerator> {
-                new KaiDiscipline(),
-                new RandomNumberTable(),
-                new Combat(),
-                new CombatSkill()
-            };
         }
     }
 }

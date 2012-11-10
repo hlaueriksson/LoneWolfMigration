@@ -16,8 +16,8 @@ namespace LoneWolf.Migration
 
             switch (args.First())
             {
-                case "-files":
-                    return FileMigration.Execute(args);
+                /*case "-files":
+                    return FileMigration.Execute(args);*/
                 case "-code":
                     return CodeMigration.Execute(args);
                 default:

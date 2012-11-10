@@ -93,5 +93,70 @@ namespace LoneWolf.Migration.Specs.Code
                 result.First().ShouldEqual(".add(new ModifyCombatSkill(2))");
             }
         }
+
+        public class Given_GoldCrowns : Given_Generator
+        {
+            [SetUp]
+            public void SetUp()
+            {
+                generator = new GoldCrowns();
+                input = GetFile(@"..\..\Data\section_with_GoldCrowns.xml");
+                result = generator.Generate(input);
+            }
+
+            [Test]
+            public void Then_the_amout_of_GoldCrowns_should_be_added_to_the_section()
+            {
+                result.Count().ShouldEqual(1);
+
+                result.First().ShouldEqual(".add(new GoldCrowns(28))");
+            }
+        }
+
+        public class Given_Meal : Given_Generator
+        {
+            [SetUp]
+            public void SetUp()
+            {
+                generator = new Meal();
+                input = GetFile(@"..\..\Data\section_with_Meal.xml");
+                result = generator.Generate(input);
+            }
+
+            [Test]
+            public void Then_the_Meal_should_be_added_to_the_section()
+            {
+                result.Count().ShouldEqual(1);
+
+                result.First().ShouldEqual(".add(new Meal(\"Food\"), TODO)");
+            }
+        }
+
+        public class Given_Weapon : Given_Generator
+        {
+            [SetUp]
+            public void SetUp()
+            {
+                generator = new Weapon();
+                input = GetFile(@"..\..\Data\section_with_Weapons.xml");
+                result = generator.Generate(input);
+            }
+
+            [Test]
+            public void Then_the_Weapons_should_be_added_to_the_section()
+            {
+                result.Count().ShouldEqual(9);
+
+                result.ElementAt(0).ShouldEqual(".add(new Weapon(\"Axe\"))");
+                result.ElementAt(1).ShouldEqual(".add(new Weapon(\"Broadsword\"))");
+                result.ElementAt(2).ShouldEqual(".add(new Weapon(\"Dagger\"))");
+                result.ElementAt(3).ShouldEqual(".add(new Weapon(\"Mace\"))");
+                result.ElementAt(4).ShouldEqual(".add(new Weapon(\"Quarterstaff\"))");
+                result.ElementAt(5).ShouldEqual(".add(new Weapon(\"Short Sword\"))");
+                result.ElementAt(6).ShouldEqual(".add(new Weapon(\"Spear\"))");
+                result.ElementAt(7).ShouldEqual(".add(new Weapon(\"Sword\"))");
+                result.ElementAt(8).ShouldEqual(".add(new Weapon(\"Warhammer\"))");
+            }
+        }
     }
 }
