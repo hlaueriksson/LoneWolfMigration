@@ -9,7 +9,7 @@ namespace LoneWolf.Migration
 {
     public static class FileMigration
     {
-        public static Result Execute(string[] args)
+        public static Result Execute(IEnumerable<string> args)
         {
             var input = args.ElementAt(1);
             var output = args.ElementAt(2);
@@ -43,7 +43,7 @@ namespace LoneWolf.Migration
             {
                 new ImageMigration(input, output),
                 new SectionMigration(input, output),
-                //new PageMigration(input, output),
+                new PageMigration(input, output)
             };
         }
     }

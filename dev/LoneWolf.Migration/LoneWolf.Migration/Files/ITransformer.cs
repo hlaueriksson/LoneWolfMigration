@@ -6,4 +6,9 @@ namespace LoneWolf.Migration.Files
     {
         string Transform(XDocument document);
     }
+
+    public interface ISubTransformer
+    {
+        XElement Transform(XElement document);
+    }
 }

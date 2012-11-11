@@ -6,7 +6,7 @@ using Should;
 
 namespace LoneWolf.Migration.Specs.Files
 {
-    public class Given_Transformer : MockedSpec<Transformer>
+    public class Given_Transformer : MockedSpec<SectionTransformer>
     {
         public class When_Transform : Given_Transformer
         {

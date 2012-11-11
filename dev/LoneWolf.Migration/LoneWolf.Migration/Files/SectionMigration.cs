@@ -19,7 +19,7 @@ namespace LoneWolf.Migration.Files
         {
             // TODO: handle sect021.xml?
 
-            return new Transformer();
+            return new SectionTransformer();
         }
 
         protected override string GetFilename(FileInfo file)

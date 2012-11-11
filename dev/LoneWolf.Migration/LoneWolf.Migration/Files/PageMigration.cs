@@ -18,7 +18,7 @@ namespace LoneWolf.Migration.Files
 
         protected override ITransformer GetTransformer(FileInfo file)
         {
-            return new Transformer();
+            return new PageTransformer();
         }
 
         protected override string GetFilename(FileInfo file)
@@ -30,9 +30,9 @@ namespace LoneWolf.Migration.Files
         {
             var inclusion = new List<string>()
             {
-                "gamerulz.htm", // TODO
-                //"discplnz.htm",
-                //"equipmnt.htm"
+                "gamerulz.htm",
+                "discplnz.htm",
+                "equipmnt.htm"
             };
 
             return inclusion.Any(f => file.EndsWith(f));

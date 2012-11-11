@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LoneWolf.Migration
@@ -10,14 +11,14 @@ namespace LoneWolf.Migration
             Log(Execute(args));
         }
 
-        private static Result Execute(string[] args)
+        private static Result Execute(IEnumerable<string> args)
         {
-            if (args.Length < 1) return GetFail();
+            if (!args.Any()) return GetFail();
 
             switch (args.First())
             {
-                /*case "-files":
-                    return FileMigration.Execute(args);*/
+                case "-files":
+                    return FileMigration.Execute(args);
                 case "-code":
                     return CodeMigration.Execute(args);
                 default:
