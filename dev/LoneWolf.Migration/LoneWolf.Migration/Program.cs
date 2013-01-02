@@ -21,6 +21,8 @@ namespace LoneWolf.Migration
                     return FileMigration.Execute(args);
                 case "-code":
                     return CodeMigration.Execute(args);
+                case "-pretzel":
+                    return PretzelMigration.Execute(args);
                 default:
                     return GetFail();
             }

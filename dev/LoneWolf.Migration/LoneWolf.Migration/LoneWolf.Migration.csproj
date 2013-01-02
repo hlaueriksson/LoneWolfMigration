@@ -83,6 +83,10 @@
     <Compile Include="Files\SectionMigration.cs" />
     <Compile Include="Files\SectionTransformer.cs" />
     <Compile Include="Files\ActionChart.cs" />
+    <Compile Include="PretzelMigration.cs" />
+    <Compile Include="Pretzel\BaseMigration.cs" />
+    <Compile Include="Pretzel\PageMigration.cs" />
+    <Compile Include="Pretzel\SectionMigration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
