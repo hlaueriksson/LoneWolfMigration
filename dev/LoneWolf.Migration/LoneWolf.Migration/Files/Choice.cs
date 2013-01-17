@@ -17,12 +17,12 @@ namespace LoneWolf.Migration.Files
 
                 var number = a.Attribute("href").Value.Replace("sect", string.Empty).Replace(".htm", string.Empty);
 
-                // <button type="button" onclick="javascript:Section.turnTo(X);">
+                // <button type="button" onclick="Section.turnTo(X);">
                 a.Name = "button";
                 a.RemoveAttributes();
                 a.Add(new XAttribute("type", "button"));
                 a.Add(new XAttribute("class", "choice"));
-                a.Add(new XAttribute("onclick", string.Format("javascript:Section.turnTo({0});", number)));
+                a.Add(new XAttribute("onclick", string.Format("Section.turnTo({0});", number)));
 
                 choice.Add(new XAttribute("id", number));
             }

@@ -14,12 +14,12 @@ namespace LoneWolf.Migration.Files
             {
                 var combat = combats.ElementAt(0);
 
-                // <button type="button" class="combat" onclick="javascript:Section.fight();">
+                // <button type="button" class="combat" onclick="Section.fight();">
                 combat.Name = "button";
                 combat.RemoveAttributes();
                 combat.Add(new XAttribute("type", "button"));
                 combat.Add(new XAttribute("class", "combat"));
-                combat.Add(new XAttribute("onclick", "javascript:Section.fight();"));
+                combat.Add(new XAttribute("onclick", "Section.fight();"));
             }
             else
             {
@@ -27,12 +27,12 @@ namespace LoneWolf.Migration.Files
                 {
                     var combat = combats.ElementAt(index);
 
-                    // <button type="button" class="combat" onclick="javascript:Section.fight(X);">
+                    // <button type="button" class="combat" onclick="Section.fight(X);">
                     combat.Name = "button";
                     combat.RemoveAttributes();
                     combat.Add(new XAttribute("type", "button"));
                     combat.Add(new XAttribute("class", "combat"));
-                    combat.Add(new XAttribute("onclick", string.Format("javascript:Section.fight({0});", index)));
+                    combat.Add(new XAttribute("onclick", string.Format("Section.fight({0});", index)));
                 }
             }
 

@@ -1,7 +1,7 @@
 ﻿<section>
   <h1>1</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <p>Pick a number from the <button type="button" class="random-number" onclick="javascript:Section.roll();">Random Number Table</button>.</p>
-  <p class="choice" id="2">If you have picked a number 0–4, <button type="button" class="choice" onclick="javascript:Section.turnTo(2);">turn to 2</button>.</p>
-  <p class="choice" id="3">If you have picked a number 5–9, <button type="button" class="choice" onclick="javascript:Section.turnTo(3);">turn to 3</button>.</p>
+  <p>Pick a number from the <button type="button" class="random-number" onclick="Section.roll();">Random Number Table</button>.</p>
+  <p class="choice" id="2">If you have picked a number 0–4, <button type="button" class="choice" onclick="Section.turnTo(2);">turn to 2</button>.</p>
+  <p class="choice" id="3">If you have picked a number 5–9, <button type="button" class="choice" onclick="Section.turnTo(3);">turn to 3</button>.</p>
 </section>

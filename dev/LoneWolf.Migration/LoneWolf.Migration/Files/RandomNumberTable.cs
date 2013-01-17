@@ -14,12 +14,12 @@ namespace LoneWolf.Migration.Files
             {
                 var random = randoms.ElementAt(0);
 
-                // <button type="button" class="random-number" onclick="javascript:Section.roll();">
+                // <button type="button" class="random-number" onclick="Section.roll();">
                 random.Name = "button";
                 random.RemoveAttributes();
                 random.Add(new XAttribute("type", "button"));
                 random.Add(new XAttribute("class", "random-number"));
-                random.Add(new XAttribute("onclick", "javascript:Section.roll();"));
+                random.Add(new XAttribute("onclick", "Section.roll();"));
             }
             else
             {
@@ -27,12 +27,12 @@ namespace LoneWolf.Migration.Files
                 {
                     var random = randoms.ElementAt(index);
 
-                    // <button type="button" class="random-number" onclick="javascript:Section.roll();">
+                    // <button type="button" class="random-number" onclick="Section.roll();">
                     random.Name = "button";
                     random.RemoveAttributes();
                     random.Add(new XAttribute("type", "button"));
                     random.Add(new XAttribute("class", "random-number"));
-                    random.Add(new XAttribute("onclick", string.Format("javascript:Section.roll({0});", index)));
+                    random.Add(new XAttribute("onclick", string.Format("Section.roll({0});", index)));
                 }
             }
 

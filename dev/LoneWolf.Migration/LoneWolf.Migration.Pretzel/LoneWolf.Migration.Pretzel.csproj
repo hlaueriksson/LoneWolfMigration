@@ -39,20 +39,18 @@
     <None Include="src\_config.yml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\css\actionchart.css" />
-    <Content Include="src\css\charactercreation.css" />
+    <Content Include="src\actionchart.html" />
+    <Content Include="src\_includes\actionchart.css" />
+    <Content Include="src\_includes\charactercreation.css" />
     <Content Include="src\_includes\section.css" />
-    <Content Include="src\js\actionchart.js" />
-    <Content Include="src\js\charactercreation.js" />
+    <Content Include="src\_includes\actionchart.js" />
+    <Content Include="src\_includes\charactercreation.js" />
     <Content Include="src\_includes\section.js" />
     <Content Include="src\_layouts\actionchart.html" />
     <Content Include="src\_layouts\charactercreation.html" />
     <Content Include="src\_layouts\section.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\img\" />
-    <Folder Include="src\_posts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

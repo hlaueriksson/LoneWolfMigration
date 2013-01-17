@@ -1,18 +1,27 @@
 package com.hoffenkloffen.lonewolf.book01;
 
-import com.hoffenkloffen.lonewolf.core.character.*;
-import com.hoffenkloffen.lonewolf.core.combat.*;
+import com.hoffenkloffen.lonewolf.core.abstractions.ISectionManager;
+import com.hoffenkloffen.lonewolf.core.character.KaiDiscipline;
+import com.hoffenkloffen.lonewolf.core.combat.Combat;
+import com.hoffenkloffen.lonewolf.core.combat.Enemy;
+import com.hoffenkloffen.lonewolf.core.combat.Immunity;
+import com.hoffenkloffen.lonewolf.core.combat.modifiers.ModifyCombatSkill;
+import com.hoffenkloffen.lonewolf.core.combat.rules.AggregateCombatRule;
+import com.hoffenkloffen.lonewolf.core.combat.rules.FromRound;
+import com.hoffenkloffen.lonewolf.core.combat.rules.OnRound;
 import com.hoffenkloffen.lonewolf.core.items.*;
-import com.hoffenkloffen.lonewolf.core.items.modifiers.*;
-import com.hoffenkloffen.lonewolf.core.section.*;
-import com.hoffenkloffen.lonewolf.core.section.injections.*;
+import com.hoffenkloffen.lonewolf.core.section.Section;
+import com.hoffenkloffen.lonewolf.core.section.injections.Aggregate;
+import com.hoffenkloffen.lonewolf.core.section.injections.DisableChoice;
+import com.hoffenkloffen.lonewolf.core.section.injections.DisableRandomNumber;
+import com.hoffenkloffen.lonewolf.core.section.injections.DisplayRandomNumber;
 import com.hoffenkloffen.lonewolf.core.section.rules.*;
 
 import static com.hoffenkloffen.lonewolf.core.combat.rules.BaseRule.combatWithout;
 
-public class SectionFactory implements ISectionFactory {
+public class SectionFactory {
 
-    protected void initSections(ISectionManager manager) {
+    public void init(ISectionManager manager) {
 
 {0}
 

@@ -69,7 +69,7 @@ namespace LoneWolf.Migration.Specs.Files
                 [Test]
                 public void Then_the_choice_link_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"choice\" onclick=\"javascript:Section.turnTo(2);\">");
+                    result.ShouldContain("<button type=\"button\" class=\"choice\" onclick=\"Section.turnTo(2);\">");
                 }
             }
 
@@ -84,7 +84,7 @@ namespace LoneWolf.Migration.Specs.Files
                 [Test]
                 public void Then_the_random_link_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"random-number\" onclick=\"javascript:Section.roll();\">");
+                    result.ShouldContain("<button type=\"button\" class=\"random-number\" onclick=\"Section.roll();\">");
                 }
             }
 
@@ -99,8 +99,8 @@ namespace LoneWolf.Migration.Specs.Files
                 [Test]
                 public void Then_the_buttons_onclick_javascript_call_should_have_a_index_parameter()
                 {
-                    result.ShouldContain("onclick=\"javascript:Section.roll(0);\"");
-                    result.ShouldContain("onclick=\"javascript:Section.roll(1);\"");
+                    result.ShouldContain("onclick=\"Section.roll(0);\"");
+                    result.ShouldContain("onclick=\"Section.roll(1);\"");
                 }
             }
 
@@ -115,7 +115,7 @@ namespace LoneWolf.Migration.Specs.Files
                 [Test]
                 public void Then_the_combat_paragraph_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"combat\" onclick=\"javascript:Section.fight();\">");
+                    result.ShouldContain("<button type=\"button\" class=\"combat\" onclick=\"Section.fight();\">");
                 }
             }
 
@@ -130,8 +130,8 @@ namespace LoneWolf.Migration.Specs.Files
                 [Test]
                 public void Then_the_buttons_onclick_javascript_call_should_have_a_index_parameter()
                 {
-                    result.ShouldContain("onclick=\"javascript:Section.fight(0);\"");
-                    result.ShouldContain("onclick=\"javascript:Section.fight(1);\"");
+                    result.ShouldContain("onclick=\"Section.fight(0);\"");
+                    result.ShouldContain("onclick=\"Section.fight(1);\"");
                 }
             }
 
@@ -180,7 +180,7 @@ namespace LoneWolf.Migration.Specs.Files
                 [Test]
                 public void Then_the_action_chart_link_should_be_transformed_to_a_button()
                 {
-                    result.ShouldContain("<button type=\"button\" class=\"action-chart\" onclick=\"javascript:Section.inventory();\">");
+                    result.ShouldContain("<button type=\"button\" class=\"action-chart\" onclick=\"Section.inventory();\">");
                 }
             }
         }

@@ -1,6 +1,6 @@
 ﻿<section>
   <h1>1</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <button type="button" class="combat" onclick="javascript:Section.fight();">Foo: <span class="smallcaps">COMBAT SKILL</span> 17   <span class="smallcaps">ENDURANCE</span> 25</button>
-  <p class="choice" id="2">If you win, <button type="button" class="choice" onclick="javascript:Section.turnTo(2);">turn to 2</button>.</p>
+  <button type="button" class="combat" onclick="Section.fight();">Foo: <span class="smallcaps">COMBAT SKILL</span> 17   <span class="smallcaps">ENDURANCE</span> 25</button>
+  <p class="choice" id="2">If you win, <button type="button" class="choice" onclick="Section.turnTo(2);">turn to 2</button>.</p>
 </section>
